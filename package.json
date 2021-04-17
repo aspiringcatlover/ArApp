@@ -1,0 +1,20 @@
+{
+  "name": "ArApp",
+  "version": "1.0.0",
+  "description": "\"# ArApp\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aspiringcatlover/ArApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aspiringcatlover/ArApp/issues"
+  },
+  "homepage": "https://github.com/aspiringcatlover/ArApp#readme"
+}
