@@ -117,3 +117,6 @@ dist
 
 #large static resources 
 /res
+
+#certs
+/cert
