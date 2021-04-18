@@ -1,6 +1,6 @@
 "# ArApp" 
 
-An ar web application hosted on nodejs and expressjs, using AR.JS framework.
+An ar web application hosted on nodejs and expressjs, using AR.Js framework.
 Scans a preset marker, and plays some user defined video. 
 
 Tested: Working on computer with webcam. For phone, working on S20+ using opera browser, and not on chrome and firefox browser. Reason being Ar.JS is not able to ask user for selection of cameras to be used for AR, given that the S20+ has 6 cameras in total.
