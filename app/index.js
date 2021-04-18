@@ -15,6 +15,7 @@ server.listen(3000, () => {
 });
 
 app.use(express.static(path.join(__dirname, 'views')));
+app.use(express.static(path.join(__dirname, 'res')));
 app.get('/', (req, res) => {
   res.send('https secured server');
 });

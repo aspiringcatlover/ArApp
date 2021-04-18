@@ -116,7 +116,7 @@ dist
 .pnp.*
 
 #large static resources 
-/res
+/app/res
 
 #certs
 /cert

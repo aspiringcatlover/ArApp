@@ -1,11 +1,58 @@
-<!DOCTYPE html>
 <html>
-    <script src="https://aframe.io/releases/1.0.0/aframe.min.js"></script>
-    <!-- we import arjs version without NFT but with marker + location based support -->
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar.js"></script>
-    <body style='margin : 0px; overflow: hidden;'>
-      <a-scene embedded arjs='sourceType: webcam;'>
-        <a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
-        <a-marker-camera preset='hiro'></a-marker-camera>
-      </a-scene>
-    </body>
+<script
+  src="https://cdn.jsdelivr.net/gh/aframevr/aframe@1c2407b26c61958baa93967b5412487cd94b290b/dist/aframe-master.min.js"></script>
+<script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+
+<script>
+
+  AFRAME.registerComponent('vidhandler', {
+    init: function () {
+      this.toggle = false;
+      this.vid = document.querySelector("#vid")
+      this.vid.pause()
+    },
+    tick: function () {
+      if (this.el.object3D.visible == true) {
+        if (!this.toggle) {
+          this.toggle = true;
+          this.vid.play();
+        }
+      } else {
+        this.toggle = false;
+        this.vid.pause();
+      }
+    }
+  });
+
+
+
+</script>
+
+<body style="margin : 0px; overflow: hidden;">
+  <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
+    arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
+    <a-assets>
+
+      <video src="https://192.168.1.172:3000/introVideo.mp4" preload="auto" id="vid" response-type="arraybuffer" loop
+        crossorigin webkit-playsinline autoplay playsinline>
+      </video>
+
+      <!--<video  id="vid" response-type="arraybuffer" loop="false" crossorigin webkit-playsinline playsinline controls>
+          <source src="https://cdn.glitch.com/5a71bb31-57f6-4304-9c91-437ed4041d3a%2Feby2.mp4?v=1562502183600" type="video/mp4">
+      </video>-->
+    </a-assets>
+
+    <a-marker preset='hiro' vidhandler>
+      <a-entity position="0 0 0">
+        <a-video width="4" height="3" rotation="-90 0 0" material='transparent:true;shader:flat;side:double;src:#vid'>
+        </a-video>
+      </a-entity>
+    </a-marker>
+
+    <a-entity camera></a-entity>
+  </a-scene>
+
+
+</body>
+
+</html>
