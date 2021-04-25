@@ -4,7 +4,8 @@ Scans a preset marker for buttons to appear, and click the buttons to start play
 
 Working on: android opera browser, windows 10, ipad safari
 
-prerequisites: 
+prerequisites:
+Have NodeJS and npm installed.
 change ip address to server's ip address in ar.html, under the vid src property.
 
 Need to self sign cert and key using OpenSSL to host https local server, as Ar.JS requires camera permission and is only possible on https.
