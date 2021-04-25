@@ -52,25 +52,43 @@
   //play intro vid when clicked on button
   let playIntroVid = async () => {
     document.querySelector(".intro-button").addEventListener("click", function () {
-      this.vid = document.querySelector("#introVideo");
+      //change vid src
+      this.vid = document.getElementById("videoSrc");
+      this.vid.src = "https://192.168.1.172:3000/introVideo.mp4";
+      this.vid.play();
+    
+      /**
       if (this.vid.paused == true) {
         this.vid.play();
       }
       else {
         this.vid.pause();
       }
+      */
     });
   }
 
   //play component vid when clicked on button
-  /**
-  let playIntroVid = async () => {
-    document.querySelector(".intro-button").addEventListener("click", function () {
-      this.vid = document.querySelector("#introVideo");
+  let playComponentVid = async () => {
+    document.querySelector(".componentScene-button").addEventListener("click", function () {
+      //change vid src
+      this.vid = document.getElementById("videoSrc");
+      this.vid.src = "https://192.168.1.172:3000/ComponentScene.mp4";
       this.vid.play();
+    
+
+    
+      /**
+      if (this.vid.paused == true) {
+        this.vid.play();
+      }
+      else {
+        this.vid.pause();
+      }
+      */
     });
   }
-  */
+
 
 
   //main function that handles marker detection events
@@ -80,13 +98,22 @@
         createIntroButton();
         createComponentSceneButton();
         playIntroVid();
-
+        playComponentVid();
       })
+    },
+    tick: function () {
+      /**
+      let introVideo = document.getElementById("introVideo");
+      if (document.querySelector("#hiroMarker").object3D.visible != true)
+      {
+        if (!introVideo.paused)
+        introVideo.pause();
+      }*/
     }
+
+
+
   });
-
-
-
 
 </script>
 <style>
@@ -160,29 +187,15 @@
   <a-scene vr-mode-ui="enabled: false;" renderer="logarithmicDepthBuffer: true;" embedded
     arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
     <a-assets>
-
-      <video src="https://192.168.1.172:3000/introVideo.mp4" preload="auto" id="introVideo" response-type="arraybuffer"
-        loop crossorigin webkit-playsinline playsinline>
-      </video>
-      <video src="https://192.168.1.172:3000/ComponentSelection.mp4" preload="auto" id="ComponentSelection"
-        response-type="arraybuffer" crossorigin webkit-playsinline autoplay playsinline>
-      </video>
-      <video src="https://192.168.1.172:3000/Component1.mp4" preload="auto" id="Component1" response-type="arraybuffer"
-        loop crossorigin webkit-playsinline autoplay playsinline>
-      </video>
-      <video src="https://192.168.1.172:3000/Component2.mp4" preload="auto" id="Component2" response-type="arraybuffer"
-        loop crossorigin webkit-playsinline autoplay playsinline>
-      </video>
-      <video src="https://192.168.1.172:3000/Component3.mp4" preload="auto" id="Component3" response-type="arraybuffer"
-        loop crossorigin webkit-playsinline autoplay playsinline>
+      <video src="https://192.168.1.172:3000/introVideo.mp4" preload="auto" id="videoSrc" response-type="arraybuffer"
+       crossorigin webkit-playsinline playsinline>
       </video>
     </a-assets>
 
-    <a-marker preset='hiro' markerhandler>
+    <a-marker preset='hiro' markerhandler id="hiroMarker">
 
-      <a-video rotation="-90 0 0" material='transparent:true;shader:flat;side:double;src:#introVideo'>
+      <a-video rotation="270 0 0" material='transparent:true;shader:flat;side:double;src:#videoSrc'>
       </a-video>
-
     </a-marker>
 
     <a-entity camera></a-entity>
