@@ -14,10 +14,12 @@ Need to self sign cert and key using OpenSSL to host https local server, as Ar.J
 ```openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:4096 -keyout private.key -out certificate.crt```
 
 To start:
-```cd ArApp ```
-```npm i package ```
-```cd app ```
-```node index.js ```
+```
+cd ArApp 
+npm i package 
+cd app 
+node index.js 
+```
 
 Go to https:localhost:3000/ar.html on browser, replacing localhost with server ip address if viewing on phone
 
