@@ -54,17 +54,19 @@
     document.querySelector(".intro-button").addEventListener("click", function () {
       //change vid src
       this.vid = document.getElementById("videoSrc");
-      this.vid.src = "https://192.168.1.172:3000/introVideo.mp4";
-      this.vid.play();
-    
-      /**
-      if (this.vid.paused == true) {
+      if (this.vid.src != "https://192.168.1.172:3000/introVideo.mp4") {
+        this.vid.src = "https://192.168.1.172:3000/introVideo.mp4";
         this.vid.play();
       }
       else {
-        this.vid.pause();
+        if (this.vid.paused) {
+          this.vid.play()
+        }
+        else {
+          this.vid.pause();
+
+        }
       }
-      */
     });
   }
 
@@ -73,19 +75,19 @@
     document.querySelector(".componentScene-button").addEventListener("click", function () {
       //change vid src
       this.vid = document.getElementById("videoSrc");
-      this.vid.src = "https://192.168.1.172:3000/ComponentScene.mp4";
-      this.vid.play();
-    
-
-    
-      /**
-      if (this.vid.paused == true) {
+      if (this.vid.src != "https://192.168.1.172:3000/ComponentScene.mp4") {
+        this.vid.src = "https://192.168.1.172:3000/ComponentScene.mp4";
         this.vid.play();
       }
       else {
-        this.vid.pause();
+        if (this.vid.paused) {
+          this.vid.play()
+        }
+        else {
+          this.vid.pause();
+
+        }
       }
-      */
     });
   }
 
@@ -188,7 +190,7 @@
     arjs="trackingMethod: best; sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;">
     <a-assets>
       <video src="https://192.168.1.172:3000/introVideo.mp4" preload="auto" id="videoSrc" response-type="arraybuffer"
-       crossorigin webkit-playsinline playsinline>
+        crossorigin webkit-playsinline playsinline>
       </video>
     </a-assets>
 
