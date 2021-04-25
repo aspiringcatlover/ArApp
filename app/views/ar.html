@@ -129,10 +129,19 @@
       if (this.vid.src != "https://192.168.1.172:3000/ComponentScene.mp4") {
         this.vid.src = "https://192.168.1.172:3000/ComponentScene.mp4";
         this.vid.play();
+
+        //show buttons for the 3 components
+        let c1 = document.getElementById("component1-button");
+        c1.style.visibility = "visible";
+        let c2 = document.getElementById("component2-button");
+        c2.style.visibility = "visible";
+        let c3 = document.getElementById("component3-button");
+        c3.style.visibility = "visible";
       }
       else {
         if (this.vid.paused) {
           this.vid.play()
+  
         }
         else {
           this.vid.pause();
@@ -285,32 +294,36 @@
     padding: 0.25em;
     border-radius: 4px;
     border: none;
-    background: grey;
+    background:red;
     color: white;
     width: 6em;
     height: 2em;
+    visibility: hidden;
   }
 
   .component2-button {
     padding: 0.25em;
     border-radius: 4px;
     border: none;
-    background: grey;
+    background:red;
     color: white;
     width: 6em;
     height: 2em;
-    margin-left:5px
+    margin-left:5px;
+    visibility: hidden;
+
   }
 
   .component3-button {
     padding: 0.25em;
     border-radius: 4px;
     border: none;
-    background: grey;
+    background:red;
     color: white;
     width: 6em;
     height: 2em;
-    margin-left:5px
+    margin-left:5px;
+    visibility: hidden;
   }
 </style>
 
@@ -341,7 +354,7 @@
 
     <a-marker preset='hiro' markerhandler id="hiroMarker">
 
-      <a-video rotation="270 0 0" material='transparent:true;shader:flat;side:double;src:#videoSrc'>
+      <a-video width="1.333" height="1" rotation="-90 0 0" material='transparent:true;shader:flat;side:double;src:#videoSrc'>
       </a-video>
     </a-marker>
 
