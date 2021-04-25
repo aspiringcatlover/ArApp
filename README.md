@@ -24,3 +24,5 @@ node index.js
 Go to https:localhost:3000/ar.html on browser, replacing localhost with server ip address if viewing on phone
 
 Glitch: https://shrub-futuristic-trunk.glitch.me/ar.html
+
+Marker: https://raw.githubusercontent.com/AR-js-org/AR.js/master/data/images/hiro.png
