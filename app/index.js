@@ -5,8 +5,8 @@ const path = require('path');
 const https = require('https');
 
 
-const key = fs.readFileSync(path.resolve((__dirname,'./cert/private.key')));
-const cert = fs.readFileSync(path.resolve((__dirname,'./cert/certificate.crt')));
+const key = fs.readFileSync(path.resolve((__dirname,'../cert/private.key')));
+const cert = fs.readFileSync(path.resolve((__dirname,'../cert/certificate.crt')));
 
 const server = https.createServer({key: key, cert: cert},app);
 
