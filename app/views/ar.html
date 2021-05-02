@@ -242,6 +242,38 @@
 
 </script>
 <style>
+  @media screen and (orientation: landscape) {
+    
+     .buttons-div {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 5em;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    z-index: 10;
+    margin: auto
+  }
+    .components-buttons-div {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 5em;
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    z-index: 10;
+    margin: auto
+  }
+ 
+    
+  }
+  
+  @media screen and (orientation: portrait){
+
   .buttons-div {
     position: fixed;
     bottom: 0;
@@ -257,7 +289,7 @@
 
   .components-buttons-div {
     position: fixed;
-    bottom:auto;
+    top:0;
     left:0;
     width: 100%;
     height: 5em;
@@ -267,7 +299,7 @@
     z-index: 10;
     margin: auto
   }
-
+  }
 
   .intro-button {
     padding: 0.25em;
@@ -294,7 +326,7 @@
     padding: 0.25em;
     border-radius: 4px;
     border: none;
-    background:red;
+    background:#56b8cf;
     color: white;
     width: 6em;
     height: 2em;
@@ -305,7 +337,7 @@
     padding: 0.25em;
     border-radius: 4px;
     border: none;
-    background:red;
+    background:#56b8cf;
     color: white;
     width: 6em;
     height: 2em;
@@ -318,13 +350,15 @@
     padding: 0.25em;
     border-radius: 4px;
     border: none;
-    background:red;
+    background:#56b8cf;
     color: white;
     width: 6em;
     height: 2em;
     margin-left:5px;
     visibility: hidden;
   }
+    
+  
 </style>
 
 <body style="margin : 0px; overflow: hidden;">
@@ -352,9 +386,9 @@
       </video>
     </a-assets>
 
-    <a-marker preset='hiro' markerhandler id="hiroMarker">
+    <a-marker preset="hiro" markerhandler id="hiroMarker">
 
-      <a-video width="1.333" height="1" rotation="-90 0 0" material='transparent:true;shader:flat;side:double;src:#videoSrc'>
+      <a-video width="1.333" height="1" rotation="-90 0 0" material="transparent:true;shader:flat;side:double;src:#videoSrc">
       </a-video>
     </a-marker>
 
@@ -362,5 +396,14 @@
   </a-scene>
 
 </body>
+
+<!--For ios-->
+<script>
+  window.addEventListener('click', function () {
+  var v = document.querySelector('#BS0i6');
+  v.play();
+  });
+</script>
+
 
 </html>
